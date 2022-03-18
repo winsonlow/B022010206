@@ -1,0 +1,19 @@
+find() command
+
+1. Query the zips collection from the sample_training database to find all
+   documents where the state is NY.
+2. Iterate through the query results.
+3. Find out how many ZIP codes there are in NY state.
+4. What about the ZIP codes that are in NY but also in the city of ALBANY?
+5. Make the cursor look more readable.
+
+mongo "mongodb+srv://sandbox.ljepj.mongodb.net/myFirstDatabase" --username m001-student
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> show dbs
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> use sample_training
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> db.zips.find({"state":"NY"})
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> it
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> db.zips.find({"state":"NY"}).count()
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> db.zips.find({"state":"NY","city":"ALBANY"}).count()
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> db.zips.find({"state":"NY","city":"ALBANY"})
+MongoDB Enterprise atlas-cs1we6-shard-0:PRIMARY> db.zips.find({"state":"NY","city":"ALBANY"}).pretty()
