@@ -1,0 +1,7 @@
+Find All the Documents Exercise:
+
+Using the sample_training.inspections collection find out how many inspections
+were conducted on Feb 20 2015.
+
+MongoDB Enterprise atlas-7w4zp1-shard-0:PRIMARY> db.inspections.find({"date":"Feb 20 2015"}).count()
+320
