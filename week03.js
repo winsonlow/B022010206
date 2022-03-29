@@ -13,7 +13,7 @@ client.connect(async err => {
     for (let i = 0; i < 100; i++) {
     let name = []
     //Array to store all the names
-    const Name = `${faker.name.firstName()} ${faker.name.lastName()}`;
+    const Name = `${faker.name.firstName()} ${faker.name.gender()}`;
     const password = faker.internet.password();
     const saltRounds = 10
 
@@ -30,7 +30,7 @@ client.connect(async err => {
                     
                     //console.log(new_password)
                     name.push({ Name, new_password});
-                    client.db("test_code").collection("week03").insertMany(name).then(result => {
+                    client.db("w3_faker").collection("week03").insertMany(name).then(result => {
                         console.log(result);
                     
                     });
